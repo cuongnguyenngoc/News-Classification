@@ -1,0 +1,19 @@
+{
+    "name": "justin/news-classification",
+    "description": "Example implementation of a News Classification with PHP-ML",
+    "type": "project",
+    "require": {
+        "php-ai/php-ml": "^0.8.0"
+    },
+    "license": "Apache License 2.0",
+    "authors": [
+        {
+            "name": "Justin Nguyen",
+            "email": "justinnguyen@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"NewClassification\\": "src/"}
+    },
+    "minimum-stability": "dev"
+}

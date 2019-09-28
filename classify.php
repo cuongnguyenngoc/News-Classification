@@ -11,7 +11,6 @@ if(isset($_POST['news'])) {
 
     $news = $_POST['news'];
 
-    file_put_contents('php://stderr', print_r($news, TRUE));
     $newsClassify = new NewsClassify("src/datasets/raw/bbc");
 
     $dataProcessor = new DataProcessor;

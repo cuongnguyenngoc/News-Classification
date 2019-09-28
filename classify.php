@@ -16,7 +16,7 @@ if(isset($_POST['news'])) {
     $isExist = $dataProcessor->checkFilExists("newsclassification.svc.model");
 
     if (!$isExist) {
-        echo "Model is not exist so the system will train the classifier<br>";
+        $data['message'] = "Model is not exist so the system will train the classifier";
         $newsClassify->trainingAndSaveModel("svc");
     }
 

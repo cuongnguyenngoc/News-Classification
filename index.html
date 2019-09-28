@@ -32,6 +32,7 @@
     </div>
     <div class="text-center" id="completion" style="display: none"> 
         <h5 class="text-warning">The paragraph you provided belongs to this category: </h5>
+        <p id="notification" class="text-warning"></p>
         <h4 id="result" class="text-success"></h4>
     </div>
 </div>
@@ -62,10 +63,11 @@
                     $("#loading").hide();
                 },
                 success: function(response){
-                    var result = JSON.stringify(response);
-
                     $("#loading").hide();
                     $("#completion").show();
+                    if (response.message != null) {
+                        $("#notification").text(response.message);
+                    }
                     $("#result").text(response.category);
                 }
             });

@@ -1,6 +1,6 @@
 # News Classification project 
 
-1. Overview
+### Overview
 - This is a machine learning project for classifying news article, paragraph, text into 5 categories: business, entertainment, politics, sport and technology. 
 
 - The training dataset are 2225 bbc news articles already labeled into 5 classes (business, entertainment, politics, sport and technology) from http://mlg.ucd.ie/datasets/bbc.html. 
@@ -9,7 +9,7 @@
 
 - The accuracy for this model is 0.956.
 
-2. Installation
+### Installation
 
 - Pull this example: ```git clone https://github.com/cuongnguyenngoc/News-Classification.git```
 - Then ```cd News-Classification```

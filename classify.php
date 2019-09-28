@@ -5,6 +5,8 @@ require __DIR__ . '/vendor/autoload.php';
 use NewsClassification\NewsClassify;
 use NewsClassification\Utils\DataProcessor;
 
+echo "what is going on here";
+
 if(isset($_POST['news'])) {
 
     $news = $_POST['news'];

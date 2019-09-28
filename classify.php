@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 use NewsClassification\NewsClassify;
 use NewsClassification\Utils\DataProcessor;
 
-echo "what is going on here";
+
 
 if(isset($_POST['news'])) {
 
@@ -25,5 +25,7 @@ if(isset($_POST['news'])) {
     // echo "Accuracy: ".$newsClassify->getClassifyPerformance("svc")."<br>";
     $data["category"] =  $newsClassify->classifyText($news, "svc");
     echo json_encode($data);
+} else {
+    echo "what is going on here";
 }
 

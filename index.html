@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>News Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <style>
+        .shadow-textarea textarea.form-control::placeholder {
+            font-weight: 300;
+        }
+        .shadow-textarea textarea.form-control {
+            padding-left: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-success text-center">News Classification</h1>
+    <div class="form-group shadow-textarea">
+        <label for="paragraph">Classify text paragraph</label>
+        <textarea class="form-control z-depth-1" id="paragraph" rows="10" placeholder="Enter a text paragraph here..."></textarea>
+    </div>
+    <div class="text-center"> 
+        <button id="classify" name="classify" class="btn btn-success">Classify</button> 
+    </div>
+    <div id="loading" class="text-center" style="margin-top: 20; display: none">
+        <img src="ajax-loader.gif">
+    </div>
+    <div class="text-center" id="completion" style="display: none"> 
+        <h5 class="text-warning">The paragraph you provided belongs to this category: </h5>
+        <h4 id="result" class="text-success"></h4>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#classify").on("click", function(){
+            var news = $("#paragraph").val();
+            console.log(news);
+            $.ajax({
+                type: "POST",
+                url : "http://localhost/NewsClassification/classify.php",
+                dataType: 'json',
+                data: {
+                    'news': news
+                },
+                beforeSend: function(){
+                    $("#loading").show().addClass("");
+                },
+                complete: function() {
+                    $("#loading").hide();
+                },
+                success: function(response){
+                    var result = JSON.stringify(response);
+
+                    $("#loading").hide();
+                    $("#completion").show();
+                    $("#result").text(response.category);
+                }
+            });
+        });
+    });
+</script>

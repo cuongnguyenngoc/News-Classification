@@ -13,7 +13,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {"NewClassification\\": "src/"}
+        "psr-4": {"NewsClassification\\": "src/"}
     },
     "minimum-stability": "dev"
 }

@@ -1,2 +1,2 @@
-src/vendor/
-src/newsclassification.phpml
+vendor/
+*.model

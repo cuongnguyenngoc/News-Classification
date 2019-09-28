@@ -7,7 +7,7 @@
 
 - The model for classification is **Support Vector Machine with N-gram** for vectorizing words, sentences. 
 
-- After training and testing. The accuracy is *0.956*.
+- The accuracy is *0.956*.
 
 ### Installation
 
